@@ -16,42 +16,41 @@ public class MakeChange {
 		double itemPrice = 0;
 		double customerPay = 0;
 		double custChange = 0;
+		double owe = 0;
 		System.out.println("Please enter the price of the item: ");
 		itemPrice = sc.nextDouble();
-		
-		
 
 		// The user is then prompted asking how much money was
 		// tendered by the customer.
 		System.out.println("How much did the customer pay with?");
 		customerPay = sc.nextDouble();
-	
-		if	(itemPrice < customerPay)
+
+		if (itemPrice < customerPay)
 			custChange = customerPay - itemPrice;
-			System.out.println("Your change is: $" + custChange);
-		if (custChange % 2 == 0)
-			
-			System.out.println("Your exact change is " );
+		System.out.println("Your change is: $" + custChange);
+		cashRegister(custChange);
+		System.out.println("Your exact change is ");
 		if (itemPrice == customerPay)
-			System.out.println("Thank you for providing the exact amount!");
-		if (itemPrice > customerPay)	
+			exactAmount();
+		if (itemPrice > customerPay)
 			System.out.println("Please provide the appropriate amount.");
-		
-			
+		owe = itemPrice - customerPay;
+		System.out.println("You owe " + owe);
 
 	}
-			
-	public static void cashRegister() {
-		System.out.println("you are in the register");
-			
-		}
-		
-		
+
+	public static void cashRegister(double custChange) {
+		System.out.println("you are in the register" + custChange);
+
+	}
+	public static void exactAmount() {
+	System.out.println("Thank you for providing the exact amount!");
 
 //		Display an appropriate message if the customer provided
 //		too little money or the exact amount.
 
-		// If the amount tendered is more than the cost of the
-		// item, display the number of bills and coins that
-		// should be given to the customer.
-	}
+	// If the amount tendered is more than the cost of the
+	// item, display the number of bills and coins that
+	// should be given to the customer.
+}
+}
