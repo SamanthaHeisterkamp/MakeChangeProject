@@ -1,5 +1,6 @@
 package com.skilldistillery.makechange;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MakeChange {
@@ -22,7 +23,7 @@ public class MakeChange {
 
 		// The user is then prompted asking how much money was
 		// tendered by the customer.
-		System.out.println("How much did the customer pay with?");
+		System.out.println("Amount tendered?");
 		customerPay = sc.nextDouble();
 		sc.close();
 
@@ -49,38 +50,38 @@ public class MakeChange {
 		if (custChange >= 100) {
 			int changeHundred = (int) (custChange / 100);
 			System.out.println(changeHundred + " Hundred dollar bills.");
-		}
 			custChange = custChange % 100;
+		}
 		if (custChange >= 50) {
 			int changeFifty = (int) (custChange / 50);
 			System.out.println(changeFifty + " Fifty dollar bills.");
-		}
 			custChange = custChange % 50;
+		}
 			if (custChange >= 20) {
 				int changeTwenty = (int) (custChange / 20);
 				System.out.println(changeTwenty + " Twenty dollar bills.");
-		}
-			custChange = custChange % 20;
+				custChange = custChange % 20;
+			}
 			if (custChange >= 10) {
 				int changeTen = (int) (custChange / 10);
 				System.out.println(changeTen + " Ten dollar bills.");
+				custChange = custChange % 10;
 			}
-			custChange = custChange % 10;
 			if (custChange >= 5) {
 				int changeFive = (int) (custChange / 5);
 				System.out.println(changeFive + " Five dollar bills.");
+				custChange = custChange % 5;
 			}
-			custChange = custChange % 5;
 			if (custChange >= 1) {
 				int changeOne = (int) (custChange / 1);
 				System.out.println(changeOne + " One dollar bills.");
+				custChange = custChange % 1;
 			}
-			custChange = custChange % 1;
 			if (custChange >= .25) {
 				int changeQuarter = (int)(custChange / .25);
 				System.out.println(changeQuarter + " Quarters.");
+				custChange = (custChange % .25);
 			}
-			custChange = (custChange % .25);
 			if (custChange >= .10) {
 				int changeDime = (int) (custChange / .10);
 				System.out.println(changeDime + " Dimes");
@@ -93,21 +94,23 @@ public class MakeChange {
 			}
 			if (custChange >= .01) {
 				custChange += 0.005;
-				int changePenny = (int) (custChange / .01);
+				int changePenny = (int) (custChange / .01); 
 				System.out.println(changePenny + " Pennies.");
 				custChange = custChange % .01;
 			}
-		}
+			}
+		
 
 
 	
 
 	public static void exactAmount() {
-		System.out.println("Thank you for providing the exact amount!");
+		System.out.println("Thank you! Have a great day!");
 	}
 
 	public static void customerOwe(double y) {
-		System.err.print("You owe " + y);
+		DecimalFormat f = new DecimalFormat("##.00");
+		System.err.print("You owe $" + f.format(y));
 		
 	}
 //		Display an appropriate message if the customer provided
