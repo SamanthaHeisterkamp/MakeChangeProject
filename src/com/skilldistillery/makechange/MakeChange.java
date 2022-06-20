@@ -47,16 +47,6 @@ public class MakeChange {
 
 	public static void cashRegister(double custChange) {
 
-		if (custChange >= 100) {
-			int changeHundred = (int) (custChange / 100);
-			System.out.println(changeHundred + " Hundred dollar bills.");
-			custChange = custChange % 100;
-		}
-		if (custChange >= 50) {
-			int changeFifty = (int) (custChange / 50);
-			System.out.println(changeFifty + " Fifty dollar bills.");
-			custChange = custChange % 50;
-		}
 			if (custChange >= 20) {
 				int changeTwenty = (int) (custChange / 20);
 				System.out.println(changeTwenty + " Twenty dollar bills.");
